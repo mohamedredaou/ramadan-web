@@ -88,3 +88,45 @@ document.getElementById('card').addEventListener('click', nextAction);
 
 // Load the first action on page load
 loadAction();
+
+// زر تبديل الوضع
+const toggleBtn = document.getElementById('toggle-theme');
+const themeIcon = document.getElementById('theme-icon');
+
+// مسارات الأيقونات (ضعها في نفس المجلد)
+const moonIcon = 'moon.png'; // أيقونة القمر
+const sunIcon = 'sun.png';   // أيقونة الشمس
+
+function setTheme(isLight) {
+  if (isLight) {
+    document.body.classList.add('light-mode');
+    themeIcon.src = sunIcon;
+    themeIcon.alt = 'وضع نهاري';
+  } else {
+    document.body.classList.remove('light-mode');
+    themeIcon.src = moonIcon;
+    themeIcon.alt = 'وضع ليلي';
+  }
+}
+
+// حفظ الوضع في localStorage
+function saveTheme(isLight) {
+  localStorage.setItem('theme', isLight ? 'light' : 'dark');
+}
+
+// استرجاع الوضع
+function getSavedTheme() {
+  return localStorage.getItem('theme') === 'light';
+}
+
+// عند الضغط على الزر
+if (toggleBtn) {
+  toggleBtn.addEventListener('click', () => {
+    const isLight = !document.body.classList.contains('light-mode');
+    setTheme(isLight);
+    saveTheme(isLight);
+  });
+}
+
+// عند تحميل الصفحة
+setTheme(getSavedTheme());
