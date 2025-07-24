@@ -3,9 +3,12 @@ An Islamic website that discusses Islamic duties, obligations, and Sunnahs.
 
 # screen in web site
 ### ***Shows random task***
-![image](imgaes/Capture1.JPG)
+![image](Image/Capture.JPG)
 ### ***With evidence***
-![image](imgaes/Capture2.JPG)
+![image](Image/Capture0.JPG)
 ### ***and the consequences***
-![image](imgaes/Capture3.JPG)
-
+![image](Imgae/Capture1.JPG)
+## and mood Drak
+![image](Imgae/Capture2.JPG)
+![image](Imgae/Capture3.JPG)
+![image](Imgae/Capture4.JPG)
