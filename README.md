@@ -11,4 +11,4 @@ An Islamic website that discusses Islamic duties, obligations, and Sunnahs.
 ## and mood Drak
 ![image](Imgae/Capture2.JPG)
 ![image](Imgae/Capture3.JPG)
-![image](Imgae/Capture4.JPG)
+![image](Image/Capture4.JPG)
