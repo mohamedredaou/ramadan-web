@@ -8,7 +8,7 @@ const actions = [
     { action: "صيام التطوع", type: "سنة", proof: "قال النبي صلى الله عليه وسلم: 'من صام يومًا في سبيل الله باعد الله وجهه عن النار سبعين خريفًا'", consequence: "تفويت الأجر العظيم" },
     { action: "زيارة المرضى", type: "سنة", proof: "قال النبي صلى الله عليه وسلم: 'حق المسلم على المسلم خمس'", consequence: "ضعف الروابط الاجتماعية" },
     { action: "الدعاء", type: "سنة", proof: "قال الله تعالى: 'وَإِذَا سَأَلَكَ عِبَادِي عَنِّي فَإِنِّي قَرِيبٌ أُجِيبُ دَعْوَةَ الدَّاعِ إِذَا دَعَانِ'", consequence: "تفويت الإجابة المستجابة" },
-    { action: "بر الوالدين", type: "فريضة", proof: "قال الله تعالى: 'وَقَضَى رَبُّكَ أَلَّا تَعْبُدُوا إِلَّا إِيَّاهُ وَبِالْوَالِدَيْنِ إِحْسَانًا'", consequence: "غضب الله وعقوق الوالدين" },
+    { action: "بر الوالدين", type: "فريضة", proof: "قال الله تعالى: 'وَقَضَى رَبُّكَ أَلَّا تَعْبُدُوا إِلَّا إِيَّاهُ وَبِالْوَالِدَيْنِ إِحْسَانًا'", consequence: "غضب الله تعالى وعقوق الوالدين" },
     { action: "التسبيح", type: "سنة", proof: "قال النبي صلى الله عليه وسلم: 'سبحان الله وبحمده سبحان الله العظيم'", consequence: "قلة الأجر والثواب" },
     { action: "الاستغفار", type: "سنة", proof: "قال الله تعالى: 'فَقُلْتُ اسْتَغْفِرُوا رَبَّكُمْ إِنَّهُ كَانَ غَفَّارًا'", consequence: "تعسر الأمور" },
     { action: "إفطار صائم", type: "سنة", proof: "قال النبي صلى الله عليه وسلم: 'من فطر صائمًا كان له مثل أجره'", consequence: "تفويت الأجر العظيم" },
@@ -89,44 +89,9 @@ document.getElementById('card').addEventListener('click', nextAction);
 // Load the first action on page load
 loadAction();
 
-// زر تبديل الوضع
-const toggleBtn = document.getElementById('toggle-theme');
-const themeIcon = document.getElementById('theme-icon');
+// ... (الكود الحالي في script.js) ...
 
-// مسارات الأيقونات (ضعها في نفس المجلد)
-const moonIcon = 'moon.png'; // أيقونة القمر
-const sunIcon = 'sun.png';   // أيقونة الشمس
-
-function setTheme(isLight) {
-  if (isLight) {
-    document.body.classList.add('light-mode');
-    themeIcon.src = sunIcon;
-    themeIcon.alt = 'وضع نهاري';
-  } else {
-    document.body.classList.remove('light-mode');
-    themeIcon.src = moonIcon;
-    themeIcon.alt = 'وضع ليلي';
-  }
-}
-
-// حفظ الوضع في localStorage
-function saveTheme(isLight) {
-  localStorage.setItem('theme', isLight ? 'light' : 'dark');
-}
-
-// استرجاع الوضع
-function getSavedTheme() {
-  return localStorage.getItem('theme') === 'light';
-}
-
-// عند الضغط على الزر
-if (toggleBtn) {
-  toggleBtn.addEventListener('click', () => {
-    const isLight = !document.body.classList.contains('light-mode');
-    setTheme(isLight);
-    saveTheme(isLight);
-  });
-}
-
-// عند تحميل الصفحة
-setTheme(getSavedTheme());
+// إضافة مستمع حدث للزر
+document.getElementById('moodButton').addEventListener('click', function () {
+  window.location.href = 'index_dark.html'; // يقوم بإعادة توجيه المتصفح إلى index_dark.html
+});
