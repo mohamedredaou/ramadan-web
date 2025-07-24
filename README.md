@@ -9,6 +9,6 @@ An Islamic website that discusses Islamic duties, obligations, and Sunnahs.
 ### ***and the consequences***
 ![image](Imgae/Capture1.JPG)
 ## and mood Drak
-![image](Imgae/Capture2.JPG)
-![image](Imgae/Capture3.JPG)
-![image](Image/Capture4.JPG)
+![image](Imgae/Capture-2.JPG)
+![image](Imgae/Capture-3.JPG)
+![image](Image/Capture-4.JPG)
