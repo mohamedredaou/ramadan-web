@@ -1,0 +1,189 @@
+body {
+    font-family: 'Tajawal', sans-serif;
+    background-color: #181a1b;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    width: 400px;
+    /* عرض أكبر قليلاً */
+    height: 400px;
+    /* ارتفاع أكبر لتحسين التناسب */
+    position: relative;
+    perspective: 1000px;
+}
+
+.card {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transform-style: preserve-3d;
+    transition: transform 0.6s ease-in-out;
+    border-radius: 20px;
+    /* حواف أكثر انسيابية */
+    overflow: hidden;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    /* ظل أكثر وضوحًا */
+}
+
+.card-front,
+.card-back,
+.card-reject {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 30px;
+    /* زيادة المساحة الداخلية */
+    border-radius: 20px;
+    opacity: 0;
+    transform: scale(0.9);
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+.card-front.active,
+.card-back.active,
+.card-reject.active {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.card-front {
+    background-color: #23272f;
+}
+
+.card-back {
+    background-color: #1c331c;
+}
+
+.card-reject {
+    background-color: #2e1a1a;
+}
+
+.card h2 {
+    font-size: 24px;
+    /* حجم خط أكبر */
+    color: #ffffff;
+    margin-bottom: 15px;
+    margin-top: -50px;
+    /* يحرك العنوان لأسفل بمقدار 20 بكسل */
+    margin-left: 50px;
+    /* يحرك العنوان إلى اليمين بمقدار 20 بكسل */
+}
+
+.card p {
+    font-size: 18px;
+    /* حجم خط أكبر */
+    color: #a3a3a3;
+    line-height: 1.6;
+    margin-left: 50px;
+    /* يحرك العنوان إلى اليمين بمقدار 20 بكسل */
+}
+
+.action-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100px;
+    /* عرض أكبر للأزرار */
+    height: 50px;
+    /* ارتفاع أكبر للأزرار */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    /* حجم خط أكبر */
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    border-radius: 15px;
+    /* حواف أكثر انسيابية */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.15);
+    /* ظل أكثر وضوحًا */
+    margin-left: 50px;
+    /* يحرك العنوان إلى اليمين بمقدار 20 بكسل */
+    margin-top: 200px;
+    /* يحرك العنوان لأسفل بمقدار 20 بكسل */
+}
+
+.action-button.left {
+    left: 0px;
+    /* تحريك الزر إلى اليسار بشكل أفضل */
+    background-color: #ff4d4d;
+}
+
+.action-button.right {
+    right: 50px;
+    /* تحريك الزر إلى اليمين بشكل أفضل */
+    background-color: #4caf50;
+}
+
+.action-button:hover {
+    transform: translateY(-50%) scale(1.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+/* From Uiverse.io by yaasiinaxmed */
+button {
+    --color: #fff7e6;
+    font-family: inherit;
+    display: inline-block;
+    /* يجعل الرابط يتصرف كزر */
+    width: 6em;
+    height: 2.6em;
+    line-height: 2.5em;
+    /* لمحاذاة النص عمودياً */
+    overflow: hidden;
+    cursor: pointer;
+    margin: 20px;
+    font-size: 17px;
+    z-index: 1;
+    color: var(--color);
+    border: 2px solid var(--color);
+    border-radius: 6px;
+    position: relative;
+    text-decoration: none;
+    /* لإزالة الخط تحت الرابط */
+    text-align: center;
+    /* لمحاذاة النص أفقياً */
+}
+
+.button {
+    background: rgb(35, 39, 47);
+}
+
+button::before {
+    position: absolute;
+    content: "";
+    background: var(--color);
+    width: 150px;
+    height: 200px;
+    z-index: -1;
+    border-radius: 50%;
+}
+
+button:hover {
+    color: #23272f;
+}
+
+button:before {
+    top: 100%;
+    left: 100%;
+    transition: 0.3s all;
+}
+
+button:hover::before {
+    top: -30px;
+    left: -30px;
+}
